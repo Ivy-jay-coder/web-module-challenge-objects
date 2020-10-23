@@ -40,12 +40,22 @@ Using the burger object below do the following:
   4. Log the correct returned price to the console
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
-
-/*export const burger = {
+const burger = {
   name: "Burger", 
   price: 18, 
-  category: "Lunch", 
-  /*Your code here*/
+  category: "Lunch",
+  discount(schoolDiscount)
+  {
+    if(schoolDiscount === "teacher" || schoolDiscount === "student")
+    {
+return this.price * .75;
+    }else{
+      return this.price * .9;
+    }
+  } 
+};
+burger.discount('teacher')
+console.log(burger.discount('teacher'));
 
 
 
